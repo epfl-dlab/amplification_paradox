@@ -64,10 +64,6 @@ class Users(MatrixHandler):
                                      list_scales,
                                      list_sizes):
             vals = stats.betabinom(self.n_users-1, alpha, beta)
-            #print(sum(vals.pmf(x)))
-            # import matplotlib.pyplot as plt
-            #
-            # plt.plot(vals.pmf(x) * scale)
 
             for _ in range(size):
                 self.update_item_column(item_index, vals.pmf(x) * scale)
@@ -77,9 +73,6 @@ class Users(MatrixHandler):
     def interact(self, user_index, cfrs, selection_mode='utility'):
         recommendations = cfrs.get_top_r_recommendations(user_index)
         scores = self.X[user_index, recommendations] + np.finfo(float).eps
-        # scores += np.mean(scores)/10
-        # scores += np.random.random(len(scores)) / 100
-        # scores = scores ** 2
         scores = scores/scores.sum()
         if selection_mode == 'utility':
             choice = np.random.choice(recommendations, p=scores)

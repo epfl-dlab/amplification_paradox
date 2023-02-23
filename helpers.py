@@ -15,7 +15,6 @@ def get_size(fig, dpi=100):
         height, width, _channels = imread(f.name).shape
         return width / dpi, height / dpi
 
-
 def set_size(fig, size, dpi=100, eps=1e-2, give_up=2, min_size_px=10):
     target_width, target_height = size
     set_width, set_height = target_width, target_height  # reasonable starting point
