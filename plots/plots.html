@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="plots.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="chart-container">
+      <table>
+        <tbody>
+          <tr>
+            <td id="plot-1"></td>
+            <td id="plot-2"></td>
+            <td id="plot-3"></td>
+            <td id="plot-4"></td>
+            <td id="plot-5"></td>
+            <td id="plot-6"></td>
+          </tr>
+          <tr>
+            <td id="plot-7"></td>
+            <td id="plot-8"></td>
+            <td id="plot-9"></td>
+            <td id="plot-10"></td>
+            <td id="plot-11"></td>
+            <td id="plot-12"></td>
+          </tr>
+          <tr>
+            <td id="plot-13"></td>
+            <td id="plot-14"></td>
+            <td id="plot-15"></td>
+            <td id="plot-16"></td>
+            <td id="plot-17"></td>
+            <td id="plot-18"></td>
+          </tr>
+          <tr>
+            <td id="plot-19"></td>
+            <td id="plot-20"></td>
+            <td id="plot-21"></td>
+            <td id="plot-22"></td>
+            <td id="plot-23"></td>
+            <td id="plot-24"></td>
+          </tr>
+          <tr>
+            <td id="plot-25"></td>
+            <td id="plot-26"></td>
+            <td id="plot-27"></td>
+            <td id="plot-28"></td>
+            <td id="plot-29"></td>
+            <td id="plot-30"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="start-button">Start animation</button>
+  </div>
+
+
+
+  <div class="margin-top">
+    <div class="radio-container">
+      <input type="radio" name="radio-topic" id="center" class="radio-margin" />
+      <label for="center">Center</label>
+      <input type="radio" name="radio-topic" id="right" class="radio-margin" checked />
+      <label for="right">Right</label>
+      <input type="radio" name="radio-topic" id="far_right" />
+      <label for="far_right">Far Right</label>
+    </div>
+  </div>
+  <div class="chart-container">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Center</th>
+          <th>Right</th>
+          <th>Far Right</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Random</th>
+          <td id="plot-compare-1"></td>
+          <td id="plot-compare-2"></td>
+          <td id="plot-compare-3"></td>
+        </tr>
+        <tr>
+          <th>Utility</th>
+          <td id="plot-compare-4"></td>
+          <td id="plot-compare-5"></td>
+          <td id="plot-compare-6"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js'></script>
+  <script src="./plots.js"></script>
+  <script src="./compare.js"></script>
+</body>
+
+</html>

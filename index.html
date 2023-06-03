@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+  <title>Amplification Paradox Visualization</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="big-container">
+    <div class="container">
+      <h1>The Amplification Paradox</h1>
+      <div class="part part-1">
+        <h2>Introduction</h2>
+        <p class="text-block">Recommendation systems are a crucial part of today's digital world, connecting users with
+          content that aligns with their interests. However, there is an ongoing debate about the role algorithms play
+          in
+          promoting extreme content, which can have negative consequences for users and society. The "amplification
+          paradox" highlights the contradiction between the exposure to extreme content and the fact that such content
+          is
+          rarely consumed, especially not primarily through algorithmic recommendations.</p>
+        <p class="text-block last-text-block">This blog post aims to explore the amplification paradox, discuss the
+          risks
+          of recommendation systems, and emphasize the importance of understanding user behavior and preferences in
+          their
+          development and evaluation. The post will include an animation explaining how agent-based models can help
+          unravel the paradox, making the complex subject more accessible. Ultimately, this aims to ensure the potential
+          dangers of recommendation systems are acknowledged and addressed responsibly.</p>
+        <h2>The Recommender System</h2>
+        <p class="text-block">Let's start talking about the recommender system. Most websites like
+          Amazon, Youtube and Netflix use collaborative filtering as a part of their sophisticated recommendation
+          systems. But what is collaborative filtering? Well, it is a technique used to recommend items to an user A
+          based on the interest of a similar user called B. The underlying assumption of the collaborative filtering
+          approach is that if a person A has the same opinion as a person B on an issue, A is more likely to have B's
+          opinion on a different issue than that of a randomly chosen person.</p>
+        <p class="text-block last-text-block">In this visualization, we demonstrate the inner workings of a
+          collaborative filtering recommender system using an interactive matrix of users and items. The matrix
+          represents the users along the rows and the items along the columns, with each cell indicating if the user has
+          consumed that item. To show the recommendation process in action, we highlight the current user row, the most
+          similar users, and the top recommended items during each iteration. The current user's row is highlighted in
+          red, while the most similar users have their rows highlighted in green. Meanwhile, the top recommended items
+          for the current user are marked in purple, at the end the user chooses an item from the purple items
+          proportionally to the utility scores each item has. As the visualization progresses, you'll see how the
+          recommender system leverages the preferences of similar users to identify the most relevant items for the
+          current user.</p>
+        <div class="recommender-outer-div">
+          <div class="recommender-inner-div">
+            <svg class="recommender-matrix"></svg>
+          </div>
+          <div class="recommender-inner-div">
+            <p class="text-block recommender-step recommender-step-1"><b>1.</b> Select a random user</p>
+            <p class="text-block recommender-step recommender-step-2"><b>2.</b> Select the 2 most similar users</p>
+            <p class="text-block recommender-step recommender-step-3"><b>3.</b> Get the 3 videos with the highest score
+            </p>
+            <p class="text-block recommender-step recommender-step-4"><b>4</b>: Choose one of the 3 videos according to
+              their scores</p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="start-button start-button-recommender margin-bottom">Start animation</button>
+          <button class="stop-button stop-button-recommender">Stop</button>
+        </div>
+        <h2>The Agent-Based Model</h2>
+        <p class="text-block">To explore the content recommended by recommendation systems, we developed an agent-based
+          model. This model, which can be interpreted as a bot, selects videos from the suggestions provided by the
+          recommender. We can configure this model to choose videos randomly or to mimic the way people pick videos. To
+          accurately represent people's behavior, we introduce the term "relative utility," which represents the
+          usefulness of each category to the user. Categories with low relative utility for a user will have a smaller
+          chance of being selected by the model.</p>
+        <p class="text-block last-text-block">In the interactive animation below, you can engage with the model and
+          observe how it selects videos from the recommendations provided by the system. You can decide whether you want
+          the model to pick videos randomly or based on utility. When set to random, all categories have an equal chance
+          of being selected, whereas when set to utility, categories have varying chances of being selected depending on
+          the user's preferences. You can see these probabilities in the bar chart below. You can also change the
+          animation speed to your liking.</p>
+        <p class="text-block">Before we begin, let's define what what each color stands for on our political spectrum:
+        </p>
+        <div class="margin-top-low margin-bottom">
+          <svg id="legend" width="585" height="80"></svg>
+        </div>
+        <div class="radio-wrapper">
+          <div class="radio-container">
+            <input type="radio" name="radio-topic" id="far-left-1" class="radio-margin" />
+            <label for="far-left-1">Far Left</label>
+            <input type="radio" name="radio-topic" id="left-1" class="radio-margin" />
+            <label for="left-1">Left</label>
+            <input type="radio" name="radio-topic" id="center-1" class="radio-margin" checked />
+            <label for="center-1">Center</label>
+            <input type="radio" name="radio-topic" id="right-1" class="radio-margin" />
+            <label for="right-1">Right</label>
+            <input type="radio" name="radio-topic" id="far-right-1" />
+            <label for="far-right-1">Far Right</label>
+          </div>
+          <div class="radio-container">
+            <input type="radio" name="radio-speed" id="slow" class="radio-margin" />
+            <label for="slow">Slow</label>
+            <input type="radio" name="radio-speed" id="medium" class="radio-margin" checked />
+            <label for="medium">Medium</label>
+            <input type="radio" name="radio-speed" id="fast" />
+            <label for="fast">Fast</label>
+          </div>
+          <div class="button r" id="button-1">
+            <input type="checkbox" class="checkbox checkbox-progress" id="checkbox-mode" />
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
+        </div>
+        <div class="margin-top-low">
+          <svg id="animation" width="690" height="230"></svg>
+        </div>
+        <div class="margin-top-low">
+          <svg id="agent-progress-bar" width="700" height="100"></svg>
+        </div>
+        <div class="recommender-outer-div margin-top-low margin-bottom-low">
+          <div class="bar-div agent-inner-div">
+            <svg id="bar"></svg>
+          </div>
+          <div class="agent-steps agent-inner-div">
+            <p class="text-block agent-step agent-step-1"><b>1.</b> Display all recommendations</p>
+            <p class="text-block agent-step agent-step-2"><b>2.</b> Choose one video according to the utilities</p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="start-button start-button-agent">Start animation</button>
+          <button class="stop-button stop-button-agent">Stop</button>
+        </div>
+          <p class="text-block margin-top-high">Now that we've examined how the model works, we will visualize how each
+            category grows or decreases when the model is interacting with the recommender system. First we will analyze
+            how
+            each category changes when the model is set to random selection, and then when it's set to selection based
+            on
+            utility.</p>
+      </div>
+      <div class="part part-2">
+        <h2>Random Selection</h2>
+        <p class="text-block last-text-block">
+          In this visualization, we present five bar charts, each representing a distinct segment of the political
+          spectrum: far left, left, center, right, and far right. The percentages within the rectangles indicate the
+          proportion of content being recommended from each category. By clicking the 'Animate' button, the model begins
+          to select videos, causing the distribution of recommendations across categories to fluctuate. It is important
+          to note that this particular model configuration has been employed in previous studies to demonstrate the
+          phenomenon of extreme content amplification.
+        </p>
+        <div class="radio-container">
+          <input type="radio" id="center-random" name="position-random" value="Center" checked>
+          <label for="center-random">Center</label>
+
+          <input type="radio" id="right-random" name="position-random" value="Right">
+          <label for="right-random">Right</label>
+
+          <input type="radio" id="far-right-random" name="position-random" value="Far Right">
+          <label for="far-right-random">Far Right</label>
+        </div>
+        <div class="div-random-svg margin-top">
+          <svg class="random-svg">
+            <rect class="random-bar-0"></rect>
+            <rect class="random-bar-1"></rect>
+            <rect class="random-bar-2"></rect>
+            <rect class="random-bar-3"></rect>
+            <rect class="random-bar-4"></rect>
+            <line class="random-line-0"></line>
+            <line class="random-line-1"></line>
+            <line class="random-line-2"></line>
+            <line class="random-line-3"></line>
+            <line class="random-line-4"></line>
+            <rect class="random-rect-0"></rect>
+            <rect class="random-rect-1"></rect>
+            <rect class="random-rect-2"></rect>
+            <rect class="random-rect-3"></rect>
+            <rect class="random-rect-4"></rect>
+            <text class="random-text-value-0"></text>
+            <text class="random-text-value-1"></text>
+            <text class="random-text-value-2"></text>
+            <text class="random-text-value-3"></text>
+            <text class="random-text-value-4"></text>
+          </svg>
+        </div>
+        <div class="button-container">
+          <button class="start-button start-button-random">Animate</button>
+        </div>
+      </div>
+      <div class="part part-3">
+        <h2>Utility Selection</h2>
+        <p class="text-block">We've observed how recommender systems tend to amplify extreme content
+          through random selection. But, let's be real, that's not how people actually choose videos. When you're
+          browsing
+          YouTube, you don't just click on random videos, do you? You typically go for the ones that catch your
+          interest.
+          That's what this configuration aims to mimic. We figure out the value of each category for a user, and then
+          the
+          model picks a video based on the combined utilities we've calculated.</p>
+        <p class="text-block last-text-block">
+          You may observe that this visualization already features rectangles for each segment of the political
+          spectrum. These rectangles signify the utility of each category for a user with a specific political
+          orientation. To substantiate the claim that a category is being amplified, the quantity of content recommended
+          from that category should exceed its utility. This configuration has been employed to counter the argument
+          that extreme content is amplified by recommendation systems.
+        </p>
+        <div class="radio-container">
+          <input type="radio" id="center-utility" name="position-utility" value="Center" checked>
+          <label for="center-utility">Center</label>
+
+          <input type="radio" id="right-utility" name="position-utility" value="Right">
+          <label for="right-utility">Right</label>
+
+          <input type="radio" id="far-right-utility" name="position-utility" value="Far Right">
+          <label for="far-right-utility">Far Right</label>
+        </div>
+        <div class="div-random-svg margin-top">
+          <svg class="utility-svg">
+            <rect class="utility-bar-0"></rect>
+            <rect class="utility-bar-1"></rect>
+            <rect class="utility-bar-2"></rect>
+            <rect class="utility-bar-3"></rect>
+            <rect class="utility-bar-4"></rect>
+            <rect class="utility-bar-border-0"></rect>
+            <rect class="utility-bar-border-1"></rect>
+            <rect class="utility-bar-border-2"></rect>
+            <rect class="utility-bar-border-3"></rect>
+            <rect class="utility-bar-border-4"></rect>
+            <line class="utility-line-0"></line>
+            <line class="utility-line-1"></line>
+            <line class="utility-line-2"></line>
+            <line class="utility-line-3"></line>
+            <line class="utility-line-4"></line>
+            <rect class="utility-rect-0"></rect>
+            <rect class="utility-rect-1"></rect>
+            <rect class="utility-rect-2"></rect>
+            <rect class="utility-rect-3"></rect>
+            <rect class="utility-rect-4"></rect>
+            <text class="utility-text-value-0"></text>
+            <text class="utility-text-value-1"></text>
+            <text class="utility-text-value-2"></text>
+            <text class="utility-text-value-3"></text>
+            <text class="utility-text-value-4"></text>
+          </svg>
+        </div>
+        <div class="button-container">
+          <button class="start-button start-button-utility">Animate</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js'></script>
+  <script src="recommender.js"></script>
+  <script src="agent.js"></script>
+  <script src="bar.js"></script>
+  <script src="random.js"></script>
+  <script src="utility.js"></script>
+  <div class="big-container big-container-footer">
+    <div class="container container-footer">
+      <footer class="footer">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="width: 33%;">
+            <img src="./pictures/dlab.svg" style="width: 100%;" alt="DLAB logo">
+          </div>
+          <div style="width: 50%;">
+            <p class="text-block">Developed by Mateo Echeverry Hoyos at the Data Science Lab (DLAB) at EPFL. Supervised
+              by
+              Manoel Horta
+              Ribeiro.</p>
+          </div>
+        </div>
+    </div>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chart {
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    padding: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chart {
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    padding: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+svg {
+  display: block;
+}
+
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-container label {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #495057;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.radio-container label:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+/* Style the custom radio button indicator */
+.radio-container label span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Update the existing rule for the hover effect */
+.radio-container label:hover span {
+  border-color: #ced4da;
+}
+
+/* Rule for the selected radio button label */
+.radio-container input[type="radio"]:checked + label {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+
+/* Add a new rule to style the custom radio button indicator when it's checked */
+.radio-container input[type="radio"]:checked + label span {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Update the existing rule for the hover effect on the selected radio button label */
+.radio-container input[type="radio"]:checked + label:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Add a new rule to style the custom radio button indicator when its label is hovered */
+.radio-container input[type="radio"]:checked + label:hover span {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.margin-top {
+  margin-top: 5vh;
+}
+
+
+/* Start and Stop Button*/
+.start-button,
+.stop-button {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.start-button {
+  background-color: #007bff;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.start-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.start-button.disabled {
+  background-color: #a7b3c0;
+  border-color: #a7b3c0;
+  cursor: not-allowed;
+}
+
+.stop-button {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #ffffff;
+}
+
+.stop-button:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}

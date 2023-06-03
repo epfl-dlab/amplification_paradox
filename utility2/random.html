@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./random.css" />
+</head>
+
+<body>
+    <div class="big-container">
+        <div class="container">
+            <div class="part part-1">
+                <div class="radio-container">
+                    <input type="radio" id="center-random" name="position-random" value="Center">
+                    <label for="center-random">Center</label>
+
+                    <input type="radio" id="right-random" name="position-random" value="Right">
+                    <label for="right-random">Right</label>
+
+                    <input type="radio" id="far-right-random" name="position-random" value="Far Right" checked>
+                    <label for="far-right-random">Far Right</label>
+                </div>
+                <svg class="random-svg">
+                    <rect class="random-bar-0"></rect>
+                    <rect class="random-bar-1"></rect>
+                    <rect class="random-bar-2"></rect>
+                    <rect class="random-bar-3"></rect>
+                    <rect class="random-bar-4"></rect>
+                    <line class="random-line-0"></line>
+                    <line class="random-line-1"></line>
+                    <line class="random-line-2"></line>
+                    <line class="random-line-3"></line>
+                    <line class="random-line-4"></line>
+                    <rect class="random-rect-0"></rect>
+                    <rect class="random-rect-1"></rect>
+                    <rect class="random-rect-2"></rect>
+                    <rect class="random-rect-3"></rect>
+                    <rect class="random-rect-4"></rect>
+                    <text class="random-text-value-0"></text>
+                    <text class="random-text-value-1"></text>
+                    <text class="random-text-value-2"></text>
+                    <text class="random-text-value-3"></text>
+                    <text class="random-text-value-4"></text>
+                </svg>
+                <div class="button-container">
+                    <button class="start-button start-button-random">Animate</button>
+                </div>
+            </div>
+            <div class="part part-2">
+                <div class="radio-container">
+                    <input type="radio" id="center-utility" name="position-utility" value="Center">
+                    <label for="center-utility">Center</label>
+
+                    <input type="radio" id="right-utility" name="position-utility" value="Right">
+                    <label for="right-utility">Right</label>
+
+                    <input type="radio" id="far-right-utility" name="position-utility" value="Far Right" checked>
+                    <label for="far-right-utility">Far Right</label>
+                </div>
+                <svg class="utility-svg">
+                    <rect class="utility-bar-0"></rect>
+                    <rect class="utility-bar-1"></rect>
+                    <rect class="utility-bar-2"></rect>
+                    <rect class="utility-bar-3"></rect>
+                    <rect class="utility-bar-4"></rect>
+                    <rect class="utility-bar-border-0"></rect>
+                    <rect class="utility-bar-border-1"></rect>
+                    <rect class="utility-bar-border-2"></rect>
+                    <rect class="utility-bar-border-3"></rect>
+                    <rect class="utility-bar-border-4"></rect>
+                    <line class="utility-line-0"></line>
+                    <line class="utility-line-1"></line>
+                    <line class="utility-line-2"></line>
+                    <line class="utility-line-3"></line>
+                    <line class="utility-line-4"></line>
+                    <rect class="utility-rect-0"></rect>
+                    <rect class="utility-rect-1"></rect>
+                    <rect class="utility-rect-2"></rect>
+                    <rect class="utility-rect-3"></rect>
+                    <rect class="utility-rect-4"></rect>
+                    <text class="utility-text-value-0"></text>
+                    <text class="utility-text-value-1"></text>
+                    <text class="utility-text-value-2"></text>
+                    <text class="utility-text-value-3"></text>
+                    <text class="utility-text-value-4"></text>
+                </svg>
+                <div class="button-container">
+                    <button class="start-button start-button-utility">Animate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="random2.js"></script>
+    <script src="random.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Circle</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="compare.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="radio-container">
+            <input type="radio" id="farLeft" name="position" value="Far Left">
+            <label for="farLeft">Far Left</label>
+
+            <input type="radio" id="left" name="position" value="Left">
+            <label for="left">Left</label>
+
+            <input type="radio" id="center" name="position" value="Center">
+            <label for="center">Center</label>
+
+            <input type="radio" id="right" name="position" value="Right">
+            <label for="right">Right</label>
+
+            <input type="radio" id="farRight" name="position" value="Far Right" checked>
+            <label for="farRight">Far Right</label>
+        </div>
+        <div class="compare-animation">
+            <div id="circles-compare">
+                <svg width="700" height="500"></svg>
+                <svg class="progress"></svg>
+            </div>
+            <div id="rectangle-compare"></div>
+        </div>
+        <button class="start-button">Start animation</button>
+    </div>
+    <script src="compare.js"></script>
+    <script src="rectangle.js"></script>
+</body>
+
+</html>
