@@ -1,8 +1,9 @@
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 2 rem;
   color: #333;
 }
+
 
 g {
   margin: auto;
@@ -54,42 +55,44 @@ g {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 3rem;
   /* Adjust the font size to your preference */
   font-weight: bold;
   color: #333;
   text-align: center;
-  margin-top: 3em;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 2rem;
   /* Adjust the font size to your preference */
   font-weight: bold;
   align-self: flex-start;
   color: #333;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .big-container {
   width: 900px;
-  margin: 0 auto;
-  background-color: #f5f5f5;
+  margin: 30px auto;
+  background-color: #fefefe;
 
   /* Add a box shadow effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
   /* Optional: Add border-radius for rounded corners */
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 .big-container-footer {
-  background-color: #f5f5f5;
+  background-color: #fefefe;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0;
+
   height: 100%;
   /* or you can use a specific height, for example 500px */
 }
@@ -114,13 +117,13 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: left;
 }
 
 .part-2,
 .part-3 {
-  margin-top: 100px;
+  /*margin-top: 2vh;*/
 }
 
 .compare-animation,
@@ -140,23 +143,23 @@ h2 {
 
 
 .margin-top {
-  margin-top: 5vh;
+  margin-top: 1vh;
 }
 
 .margin-top-low {
-  margin-top: 2vh;
+  margin-top: 0.5vh;
 }
 
 .margin-bottom {
-  margin-bottom: 10vh;
+  margin-bottom: 1vh;
 }
 
 .margin-bottom-low {
-  margin-bottom: 3vh;
+  margin-bottom: 0.5vh;
 }
 
 .margin-top-high{
-  margin-top: 100px;
+  margin-top: 3vh;
 }
 
 .start-button {
